@@ -3,18 +3,18 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def new 
-  end 
+  def new
+  end
 
-  def create 
+  def create
     @post = Post.new(post_params)
-    if @post.valid? 
-      @post.save 
+    if @post.valid?
+      @post.save
       redirect_to post_path(@post)
-    else 
-      render :new 
-    end 
-  end 
+    else
+      render :new
+    end
+  end
 
   def edit
     @post = Post.find(params[:id])
@@ -24,11 +24,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     @post.update(post_params)
-    if @post.valid? 
-      @post.save 
+    if @post.valid?
+      @post.save
       redirect_to post_path(@post)
-    else 
-      render :edit 
+    else
+      render :edit
     end
   end
 
